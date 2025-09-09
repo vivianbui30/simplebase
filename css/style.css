@@ -6,12 +6,18 @@ TABLE OF CONTENTS
     # DEFINE GLOBAL VARIABLES (CUSTOM PROPERTIES)
     # SET GLOBAL COLORS
     # SET GLOBAL TYPOGRAPHY
-
+    # GLOBAL MEDIA (images, videos, svg)
+    # GLOBAL HELPERS
+    # GLOBAL RESETS
     ...
+
+# LAYOUT
+    # CONTAINER
+    # GRID SYSTEM (12 COLUMNS)
 
 # UI COMPONENTS
     # CARDS
-
+    # HR (HORIZONTAL RULES)
 
     (WILL ADD MORE HERE)
 
@@ -64,36 +70,104 @@ TABLE OF CONTENTS
     --unit-2xl: 4em;
     --unit-3xl: 6em;
 
+    --container-width: 1100px;
+
     /* GLOBAL FONTS */
-    --font-body: ui-system, Helvetica, Arial, sans-serif;
+    --font-body: system-ui, Helvetica, Arial, sans-serif;
     --font-headings: Georgia, Times, "Times New Roman", serif;
 }
 
-/* SET GLOBAL COLORS */
-
+/* SET GLOBAL TYPOGRAPHY */
 body {
     font-family: var(--font-body);
     background-color: var(--color-body-background);
     color: var(--color-body-text);
 }
 
+/* HEADINGS */
 h1, h2, h3 {
     font-family: var(--font-headings);
     color: var(--color-body-text-dark);
 }
 
-/* SET GLOBAL TYPOGRAPHY */
+/* GLOBAL MEDIA */
 
-/* HEADINGS */
+/* IMAGES */
+/* responsive on small screens, do not stretch (beyond the original on large screens) */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* GLOBAL HELPERS */
+.text-centered {
+    text-align: center;
+}
+
+/* Remove the default 8px margin on body */
+body {
+    margin: 0;
+}
+
+/* GLOBAL RESETS */
+/* Set all elements to bix sizing border-box */
+* { box-sizing: border-box;}
 
 /* LINKS */
 a {
     color: var(--color-primary);
+    text-decoration-color: var(--color-primary-dark);
+    text-underline-offset: .1em;
+    text-decoration-thickness: 0.75px;
 }
 
 a:hover {
     color: var(--color-primary-dark);
 }
+
+
+/* ------------------------- 
+        LAYOUT
+---------------------------- */
+
+/* CONTAINER */
+.container {
+    max-width: var(--container-width);
+    margin-inline: auto;
+}
+
+/* GRID SYSTEM (12 COLUMNS) */
+
+.row {
+    --grid-gap: var(--unit-s);
+}
+
+.row > * {
+    margin-block-end: var(--grid-gap);
+}
+
+@media (min-width: 768px) {
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--grid-gap);
+    }
+
+    .one-half { grid-column: auto / span 6; }
+    .one-third { grid-column: auto / span 4; }
+    .one-fourth { grid-column: auto / span 3; }        
+}
+
+/* FOR DEMO PURPOSES ONLY */
+.row.demo > * {
+    background-color: #eee;
+    text-align: center;
+    padding: var(--unit-s);
+}
+
+
+
 
 /* ------------------------- 
         UI COMPONENTS 
@@ -106,7 +180,6 @@ a:hover {
     margin-right: var(--unit-xs);
     padding: var(--unit-s);
     border-radius: var(--border-radius);
-    
 }
 
 .color-swatch {
@@ -114,4 +187,11 @@ a:hover {
     background-color: var(--_swatch-color);
     width: 150px;
     height: 150px;
+}
+
+/* HR */
+hr {
+    border: none;
+    border-bottom: var(--border-thickness) solid var(--color-border);
+    margin: var(--unit-xl) 0;
 }
