@@ -71,7 +71,19 @@
                 #166534</p>
             </div>
         </div>
+        <pre><code>
+:root {
+        /* DEFINE BASE COLORS */
+        --color-blue-100: #ccdffc;
+        --color-blue-400: #3b82f6;
+        --color-blue-900: #1e40af;
 
+        /* DEFINE SEMANTIC COLORS */
+        --color-primary: var(--color-blue-400);
+        --color-primary-dark: var(--color-blue-900);
+
+}
+        </code></pre>
         <hr>
 
         <h2>Typography</h2>
@@ -83,6 +95,16 @@
 
         <p>This is a paragraph. This is <em>italic</em> text. This is <b>bold</b> text. This is an <a href="#">inline link</a>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis omnis corporis dicta quae est quibusdam rem modi cumque corrupti possimus.</p>
 
+        <pre><code>
+
+&lt;h1&gt;This is a Heading 1 &lt;/h1&gt;
+&lt;h2&gt;This is a Heading 2 &lt;/h2&gt;
+&lt;h3&gt;This is a Heading 3 &lt;/h3&gt;
+&lt;h4&gt;This is a Heading 4 &lt;/h4&gt;
+
+&lt;p&gt;This is a paragraph. This is &lt;em&gt;italic&lt;/em&gt; text. This is &lt;b&gt;bold&lt;/b&gt; text. This is an &lt;a href="#"&gt;inline link&lt;/a&gt;. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis omnis corporis dicta quae est quibusdam rem modi cumque corrupti possimus.&lt;/p&gt;    
+
+        </code></pre>
         <hr>
 
         <h2>Media</h2>
@@ -97,6 +119,9 @@
         <h3>Easy Way to Center Text</h3>
         <p class="text-centered">I want this text to be centered.</p>
 
+        <pre><code>
+&lt;p class="text-centered"&gt;I want this text to be centered.&lt;/p&gt;
+        </code></pre>
         <hr>
 
         <h2>Grid System (12-column)</h2>
@@ -111,13 +136,198 @@
             <div class="one-third">&frac13;</div>
         </div>
         <div class="row demo">
+            <div class="one-third">&frac13;</div>
+            <div class="two-thirds">&frac23;</div>
+        </div>
+        <div class="row demo">
             <div class="one-fourth">&frac14;</div>
             <div class="one-fourth">&frac14;</div>
             <div class="one-fourth">&frac14;</div>
             <div class="one-fourth">&frac14;</div>
+        </div>
+        <div class="row demo">
+            <div class="one-fourth">&frac14;</div>
+            <div class="three-fourths">&frac34;</div>
+        </div>
+        <div class="row demo">
+            <div class="one-half centered">&frac12; centered</div>
+        </div>
+
+        <div class="row demo">
+            <div class="two-thirds centered">&frac23; centered</div>
+        </div>
+        
+        <div class="row demo">
+            <div class="col-1">.col-1</div>
+        </div>
+        <div class="row demo">
+            <div class="col-2">.col-2</div>
+        </div>
+        <div class="row demo">
+            <div class="col-3">.col-3</div>
+        </div>
+        <div class="row demo">
+            <div class="col-4">.col-4</div>
+        </div>
+        <div class="row demo">
+            <div class="col-5">.col-5</div>
+        </div>
+        <div class="row demo">
+            <div class="col-6">.col-6</div>
+        </div>
+        <div class="row demo">
+            <div class="col-7">.col-7</div>
+        </div>
+        <div class="row demo">
+            <div class="col-8">.col-8</div>
+        </div>
+        <div class="row demo">
+            <div class="col-9">.col-9</div>
+        </div>
+        <div class="row demo">
+            <div class="col-10">.col-10</div>
+        </div>
+        <div class="row demo">
+            <div class="col-11">.col-11</div>
+        </div>
+        <div class="row demo">
+            <div class="col-12">.col-12</div>
+        </div>
+
+        <div class="row demo">
+            <div class="col-11 push-1">.push-1</div>
+        </div>
+        <div class="row demo">
+            <div class="col-10 push-2">.push-2</div>
+        </div>
+        <div class="row demo">
+            <div class="col-9 push-3">.push-3</div>
+        </div>
+        <div class="row demo">
+            <div class="col-8 push-4">.push-4</div>
+        </div>
+        <div class="row demo">
+            <div class="col-7 push-5">.push-5</div>
+        </div>
+        <div class="row demo">
+            <div class="col-6 push-6">.push-6</div>
+        </div>
+        <div class="row demo">
+            <div class="col-5 push-7">.push-7</div>
+        </div>
+        <div class="row demo">
+            <div class="col-5 push-8">.push-8</div>
+        </div>
+        <div class="row demo">
+            <div class="col-3 push-9">.push-9</div>
+        </div>
+        <div class="row demo">
+            <div class="col-2 push-10">.push-10</div>
+        </div>
+        <div class="row demo">
+            <div class="col-1 push-11">.push-11</div>
+        </div>
+        <pre><code>
+&lt;div class="row demo"&gt;
+    &lt;div class="one-half"&gt;&frac12;&lt;/div&gt;
+    &lt;div class="one-half"&gt;&frac12;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row demo"&gt;
+    &lt;div class="one-third"&gt;&frac13;&lt;/div&gt;
+    &lt;div class="one-third"&gt;&frac13;&lt;/div&gt;
+    &lt;div class="one-third"&gt;&frac13;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row demo"&gt;
+    &lt;div class="one-third"&gt;&frac13;&lt;/div&gt;
+    &lt;div class="two-thirds"&gt;&frac23;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row demo"&gt;
+    &lt;div class="one-fourth"&gt;&frac14;&lt;/div&gt;
+    &lt;div class="one-fourth"&gt;&frac14;&lt;/div&gt;
+    &lt;div class="one-fourth"&gt;&frac14;&lt;/div&gt;
+    &lt;div class="one-fourth"&gt;&frac14;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row demo"&gt;
+    &lt;div class="one-fourth"&gt;&frac14;&lt;/div&gt;
+    &lt;div class="three-fourths"&gt;&frac34;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row demo"&gt;
+    &lt;div class="one-half centered"&gt;&frac12;&lt;centered/div&gt;
+&lt;/div&gt;
+&lt;div class="row demo"&gt;
+    &lt;div class="two-thirds centered"&gt;&frac23;&lt;centered/div&gt;
+&lt;/div&gt;
+        </code></pre>
+
+        <div class="row">
+            <div class="one-half">
+                <img src="img/placeholder_2000x1000.gif" alt="Placeholder Image" width="2000" height="1000">
+            </div>
+            <div class="one-half">
+                <h1>Image on the Left, Text on the Right</h1>
+                <p>This column is rending via the default normal flow. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum illo corrupti magnam, aspernatur.</p>
+            </div>
+        </div>
+
+        <div class="row swapped">
+            <div class="one-half">
+                <img src="img/placeholder_2000x1000.gif" alt="Placeholder Image" width="2000" height="1000">
+            </div>
+            <div class="one-half">
+                <h1>Image on the Right, Text on the Left</h1>
+                <p>This column is rending via the default normal flow. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum illo corrupti magnam, aspernatur.</p>
+            </div>
+        </div>
+
+        <pre><code>
+&lt;div class="row swapped"&gt;
+    &lt;div class="one-half"&gt;
+        &lt;img src="img/placeholder_2000x1000.gif" alt="Placeholder Image" width="2000" height="1000"&gt;
+    &lt;/div&gt;
+    &lt;div class="one-half"&gt;
+        &lt;h1&gt;Image on the Right, Text on the Left&lt;/h1&gt;
+        &lt;p&gt;This column is rending via the default normal flow. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum illo corrupti magnam, aspernatur.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+
+        <div class="row">
+            <div class="one-half centered">
+                <img src="img/placeholder_2000x1000.gif" alt="Placeholder Image" width="2000" height="1000">
+            </div>
+            <div class="one-half centered">
+                <h1>Image on the Left, Text on the Right</h1>
+                <p>This column is rending via the default normal flow. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum illo corrupti magnam, aspernatur.</p>
+            </div>
+        </div>
+
+        <pre><code>
+&lt;div class="row"&gt;
+    &lt;div class="one-half centered"&gt;
+        &lt;img src="img/placeholder_2000x1000.gif" alt="Placeholder Image" width="2000" height="1000"&gt;
+    &lt;/div&gt;
+    &lt;div class="one-half centered"&gt;
+        &lt;h1&gt;Image on the Left, Text on the Right&lt;/h1&gt;
+        &lt;p&gt;This column is rending via the default normal flow. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum illo corrupti magnam, aspernatur.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+
+        <div class="row">
+            <div class="col-5 push-1">
+                <img src="img/placeholder_2000x1000.gif" alt="placeholder image" width="2000" height="1000">
+                <h2>Col 5 column</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente debitis quisquam voluptas officiis facilis aperiam?</p>
+            </div>
+            <div class="col-5">
+                <img src="img/placeholder_2000x1000.gif" alt="placeholder image" width="2000" height="1000">
+                <h2>Col 5 column</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente debitis quisquam voluptas officiis facilis aperiam?</p>
+            </div>
         </div>
     </div>
     <!-- MAIN JS -->
      <script src="js/script.js"></script>
 </body>
 </html>
+

@@ -18,6 +18,7 @@ TABLE OF CONTENTS
 # UI COMPONENTS
     # CARDS
     # HR (HORIZONTAL RULES)
+    # CODE BLOCKS
 
     (WILL ADD MORE HERE)
 
@@ -65,6 +66,7 @@ TABLE OF CONTENTS
     --unit-2xs: 0.25em;
     --unit-xs: 0.5em;
     --unit-s: 1em;
+    --unit-m: 1.5em;
     --unit-l: 2em;
     --unit-xl: 3em;
     --unit-2xl: 4em;
@@ -134,6 +136,7 @@ a:hover {
 .container {
     max-width: var(--container-width);
     margin-inline: auto;
+    padding-inline: var(--unit-m);
 }
 
 /* GRID SYSTEM (12 COLUMNS) */
@@ -154,9 +157,47 @@ a:hover {
         gap: var(--grid-gap);
     }
 
+    /* SEMANTIC COLUMNS */
     .one-half { grid-column: auto / span 6; }
     .one-third { grid-column: auto / span 4; }
-    .one-fourth { grid-column: auto / span 3; }        
+    .two-thirds { grid-column: auto / span 8;}
+    .one-fourth { grid-column: auto / span 3; }    
+    .three-fourths { grid-column: auto / span 9; }     
+
+    /* SWAPS (REVERSE COLUMNS) - WORKS ONLY w/ 2 COLUMNS */
+    .row.swapped > *:first-child { order: 2; }
+    .row.swapped > *:last-child { order: 1; }
+
+    /* CENTERED COLUMNS */
+    .one-half.centered { grid-column-start: 4; }
+    .two-thirds.centered { grid-column-start: 3; }
+
+    /* 12 COLUMNS CLASS-BASED GRID SYSTEM */
+    .col-1 { grid-column: auto / span 1; }
+    .col-2 { grid-column: auto / span 2; }
+    .col-3 { grid-column: auto / span 3; }
+    .col-4 { grid-column: auto / span 4; }
+    .col-5 { grid-column: auto / span 5; }
+    .col-6 { grid-column: auto / span 6; }
+    .col-7 { grid-column: auto / span 7; }
+    .col-8 { grid-column: auto / span 8; }
+    .col-9 { grid-column: auto / span 9; }
+    .col-10 { grid-column: auto / span 10; }
+    .col-11 { grid-column: auto / span 11; }
+    .col-12 { grid-column: auto / span 12; }
+
+    /* PUSHES */
+    .push-1 { grid-column-start: 2; }
+    .push-2 { grid-column-start: 3; }
+    .push-3 { grid-column-start: 4; }
+    .push-4 { grid-column-start: 5; }
+    .push-5 { grid-column-start: 6; }
+    .push-6 { grid-column-start: 7; }
+    .push-7 { grid-column-start: 8; }
+    .push-8 { grid-column-start: 9; }
+    .push-9 { grid-column-start: 10; }
+    .push-10 { grid-column-start: 11; }
+    .push-11 { grid-column-start: 12; }
 }
 
 /* FOR DEMO PURPOSES ONLY */
@@ -194,4 +235,13 @@ hr {
     border: none;
     border-bottom: var(--border-thickness) solid var(--color-border);
     margin: var(--unit-xl) 0;
+}
+
+/* CODE BLOCKS */
+pre:has(code) {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--unit-s);
+    border-radius: var(--border-radius);
+    white-space: pre-wrap;
 }
