@@ -9,10 +9,18 @@ TABLE OF CONTENTS
     # GLOBAL MEDIA (images, videos, svg)
     # GLOBAL HELPERS
     # GLOBAL RESETS
+        # ENABLE SMOOTH SCROLLING
+    # LINKS
     ...
 
 # LAYOUT
     # CONTAINER
+    # MAIN
+        # SECTIONS
+    # FOOTER
+
+# SITE STRUCTURE
+    # HEADER
     # GRID SYSTEM (12 COLUMNS)
 
 # UI COMPONENTS
@@ -21,6 +29,9 @@ TABLE OF CONTENTS
     # CODE BLOCKS
 
     (WILL ADD MORE HERE)
+
+# CUSTOM SITE STYLING (OPINIONATED)
+    # BODY GRID LAYOUT SYSTEM (header, main, footer)
 
 -------------------------*/
 
@@ -56,6 +67,11 @@ TABLE OF CONTENTS
     --color-primary: var(--color-blue-400);
     --color-primary-dark: var(--color-blue-900);
     --color-secondary: var(--color-green-400);
+
+
+    --color-hero-background: var(--color-blue-100);
+    --color-siteheader-background: var(--color-green-100);
+    --color-sitefooter-background: var(--color-green-100);
 
     /* BORDER */
     --color-border: var(--color-grey-200);
@@ -115,6 +131,11 @@ body {
 /* Set all elements to bix sizing border-box */
 * { box-sizing: border-box;}
 
+/* ENABLE SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+
 /* LINKS */
 a {
     color: var(--color-primary);
@@ -136,7 +157,7 @@ a:hover {
 .container {
     max-width: var(--container-width);
     margin-inline: auto;
-    padding-inline: var(--unit-m);
+    padding-inline: var(--unit-s);
 }
 
 /* GRID SYSTEM (12 COLUMNS) */
@@ -207,8 +228,34 @@ a:hover {
     padding: var(--unit-s);
 }
 
+/* ------------------------- 
+        SITE STRUCTURE 
+---------------------------- */
 
+/* SITE HEADER */
+.site-header {
+    background-color: var(--color-siteheader-background);
+    padding: var(--unit-s);
+}
 
+/* SITE MAIN */
+.site-main {
+    background-color: transparent;
+}
+
+section {
+    padding-block: var(--unit-2xl);
+}
+
+.hero {
+    background-color: var(--color-hero-background);
+}
+
+/* SITE FOOTER */
+.site-footer {
+    background-color: var(--color-sitefooter-background);
+    padding: var(--unit-s);
+}
 
 /* ------------------------- 
         UI COMPONENTS 
@@ -244,4 +291,14 @@ pre:has(code) {
     padding: var(--unit-s);
     border-radius: var(--border-radius);
     white-space: pre-wrap;
+}
+
+/* ------------------------- 
+    CUSTOM SITE STYLING
+---------------------------- */
+/* PUSH THE FOOTER TO THE BOTTOM BY DEFAULT */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100svh;
 }
