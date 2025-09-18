@@ -170,7 +170,8 @@ a:hover {
     margin-block-end: var(--grid-gap);
 }
 
-@media (min-width: 768px) {
+/* NEW WIDTH SYNTAX (updated from min-width: 768px) */
+@media (width >= 768px) {
 
     .row {
         display: grid;
