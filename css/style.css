@@ -21,6 +21,8 @@ TABLE OF CONTENTS
 
 # SITE STRUCTURE
     # HEADER
+        # LOGO
+        # SITE NAV
     # GRID SYSTEM (12 COLUMNS)
 
 # UI COMPONENTS
@@ -122,6 +124,15 @@ img {
     text-align: center;
 }
 
+/* HIDE CONTENT VISUALLY (BUT KEEP FOR SEO AND ACCESBILITY) */
+.hide-visually, 
+.visually-hidden,
+.screen-reader-only {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+
+}
 /* Remove the default 8px margin on body */
 body {
     margin: 0;
@@ -235,8 +246,65 @@ a:hover {
 
 /* SITE HEADER */
 .site-header {
-    background-color: var(--color-siteheader-background);
     padding: var(--unit-s);
+}
+
+/* REMOVE HEADER PADDING IF HAS A CONTAIENR */
+.site-header:has(.container) {
+    padding: 0;
+}
+
+/* LOGO STYLING */
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--unit-s);
+}
+
+.site-header .logo svg {
+    max-height: 50px;
+    min-width: 50px;
+}
+
+.site-header .logo img,
+.site-header .logo svg {
+    vertical-align: middle;
+}
+
+.site-header .logo h2 {
+    margin: 0;
+    font-size: 1.3125rem;
+}
+
+.site-header .logo a {
+    text-decoration: none;
+}
+
+/* SITE NAV */
+    /* DISPLAY LOGO ON FLEX AND NAV ON RIGHT */
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--unit-s);
+}
+
+.site-header .site-nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: var(--unit-s);
+    flex-wrap: wrap;
+}
+
+.site-header .site-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: var(--unit-s);
+    padding-block-start: calc(var(--unit-xs) + .1em);
 }
 
 /* SITE MAIN */
@@ -255,8 +323,15 @@ section {
 /* SITE FOOTER */
 .site-footer {
     background-color: var(--color-sitefooter-background);
-    padding: var(--unit-s);
+    padding-block: var(--unit-2xl);
+    padding-inline: var(--unit-s);
 }
+
+/* REMOVE FOOTER PADDING IF HAS A CONTAIENR */
+.site-footer:has(.container) {
+    padding-inline: 0;
+}
+
 
 /* ------------------------- 
         UI COMPONENTS 
@@ -302,4 +377,9 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100svh;
+}
+
+/* NUDGE THE NAV ITEMS DOWN TO ALIGN WITH LOGO TEXT */
+.site-header .site-nav ul {
+    /* padding-block-start: calc(var(--unit-xs) + .35em;) */
 }

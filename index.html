@@ -13,8 +13,24 @@
 
     <header class="site-header">
         <div class="logo">
-            <h2><a href="index.html">Simple Base</a></h2>
+
+        <!-- INLINE SVG LOGO EXAMPLE
+        <a href="index.html"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500">
+            <path d="M486.13,146.47c.57-4.69.86-9.49.86-14.33s-.29-9.63-.86-14.33c-6.49-53.65-49.01-96.2-102.65-102.76-4.74-.58-9.57-.88-14.46-.88s-9.72.3-14.46.88c-54.73,6.68-97.89,50.86-103,106.08-4.9-55.42-48.15-99.82-103.03-106.52-4.74-.59-9.57-.88-14.46-.88s-9.72.29-14.46.88C65.97,21.16,23.45,63.71,16.96,117.37c-.57,4.69-.86,9.49-.86,14.33s.29,9.63.86,14.33c6.6,54.48,50.37,97.53,105.19,103.03-55.23,5.13-99.44,48.35-106.06,103.12-.57,4.7-.86,9.49-.86,14.33s.29,9.64.86,14.34c6.49,53.65,49.01,96.2,102.65,102.75,4.74.59,9.57.89,14.46.89s9.71-.3,14.46-.89c54.82-6.69,98.02-51.01,103.02-106.34,5.02,55.3,48.2,99.57,103.01,106.26,4.74.59,9.57.88,14.46.88s9.72-.29,14.46-.88c53.64-6.55,96.16-49.1,102.65-102.76.57-4.69.86-9.49.86-14.33s-.29-9.63-.86-14.33c-6.5-53.68-49.08-96.26-102.77-102.76,54.1-6.15,97.11-48.89,103.64-102.87ZM250.67,267.48c-1.21-9.25-8.39-16.7-17.53-18.31,9.48-1.26,17.05-8.79,18.38-18.25,1.05,8.89,7.61,16.16,16.15,18.27-8.91,1.81-15.84,9.18-17,18.29Z"/>
+        </svg></a> -->
+
+        <!-- INLINE IMG LOGO EXAMPLE -->
+        <a href="index.html"><img src="img/simplebase_logo_black.png" width="200" height="50" alt="simple base logo"></a>
+            <h2><a href="index.html" class="visually-hidden">Simple Base</a></h2>
         </div>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+
+            </ul>
+        </nav>
     </header>
 
     <main class="site-main">
@@ -395,12 +411,27 @@ sitename/
     </main>
 
     <footer class="site-footer">
-        FOOTER GOES HERE
+        <div class="container">
+            <div class="col-6">
+                <div class="column one-half">
+                    <h2>About Simple Base</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel optio id possimus consequatur provident unde error laborum hic saepe inventore.</p>
+                </div>
+                <div class="col-3 push-9">
+                    <h2>Pages</h2>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="documentation.html">Documentation</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- MAIN JS -->
      <script src="js/script.js"></script>
-
 </body>
 
 </html>
