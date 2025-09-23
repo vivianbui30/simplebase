@@ -246,12 +246,13 @@ a:hover {
 
 /* SITE HEADER */
 .site-header {
-    padding: var(--unit-s);
+    padding-block: var(--unit-s);
+    padding-inline: var(--unit-s);
 }
 
 /* REMOVE HEADER PADDING IF HAS A CONTAIENR */
 .site-header:has(.container) {
-    padding: 0;
+    padding-inline: 0;
 }
 
 /* LOGO STYLING */
@@ -288,6 +289,7 @@ a:hover {
         justify-content: space-between;
         align-items: center;
         gap: var(--unit-s);
+        flex-wrap: wrap;
 }
 
 .site-header .site-nav ul {
@@ -313,11 +315,12 @@ a:hover {
 }
 
 section {
-    padding-block: var(--unit-2xl);
+    padding-block: var(--unit-xl);
 }
 
 .hero {
     background-color: var(--color-hero-background);
+    padding-block: var(--unit-2xl);
 }
 
 /* SITE FOOTER */
@@ -381,5 +384,5 @@ body {
 
 /* NUDGE THE NAV ITEMS DOWN TO ALIGN WITH LOGO TEXT */
 .site-header .site-nav ul {
-    /* padding-block-start: calc(var(--unit-xs) + .35em;) */
+    padding-block-start: calc(var(--unit-xs) + .35em;)
 }
