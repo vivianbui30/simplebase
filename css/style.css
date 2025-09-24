@@ -72,8 +72,8 @@ TABLE OF CONTENTS
 
 
     --color-hero-background: var(--color-blue-100);
-    --color-siteheader-background: var(--color-green-100);
-    --color-sitefooter-background: var(--color-green-100);
+    --color-siteheader-background: transparent;
+    --color-sitefooter-background: transparent;
 
     /* BORDER */
     --color-border: var(--color-grey-200);
@@ -108,6 +108,18 @@ body {
 h1, h2, h3 {
     font-family: var(--font-headings);
     color: var(--color-body-text-dark);
+    /* ADD SUPPORT FOR TEXTWRAP BALANCE */
+    text-wrap: balance;
+}
+
+/* REMOVE WIDOWS FOR ALL PARAGRAPHS AND LIST ITEMS */
+p, li {
+    text-wrap: pretty;
+}
+
+/* LIMIT THE NUMBER OF CHARACTERS PER LINE FOR ALL PARAGRAPHS */
+p {
+    max-inline-size: 75ch;
 }
 
 /* GLOBAL MEDIA */
@@ -122,6 +134,11 @@ img {
 /* GLOBAL HELPERS */
 .text-centered {
     text-align: center;
+}
+
+/* CENTER PARAGRAPHS INSIDE CENTERED PARENTS */
+.text-centered p {
+    margin-inline: auto;
 }
 
 /* HIDE CONTENT VISUALLY (BUT KEEP FOR SEO AND ACCESBILITY) */
@@ -145,6 +162,11 @@ body {
 /* ENABLE SMOOTH SCROLLING */
 html {
     scroll-behavior: smooth;
+}
+
+/* ADD OFFSET TO ALL INLINE ANCHOR LINKS */
+:target {
+    scroll-margin-top: var(--unit-s);   
 }
 
 /* LINKS */
@@ -250,7 +272,7 @@ a:hover {
     padding-inline: var(--unit-s);
 }
 
-/* REMOVE HEADER PADDING IF HAS A CONTAIENR */
+/* REMOVE HEADER PADDING IF HAS A CONTAINER */
 .site-header:has(.container) {
     padding-inline: 0;
 }
@@ -315,12 +337,17 @@ a:hover {
 }
 
 section {
-    padding-block: var(--unit-xl);
+    padding-block: var(--unit-2xl);
 }
 
 .hero {
     background-color: var(--color-hero-background);
-    padding-block: var(--unit-2xl);
+    padding-block: var(--unit-3xl);
+    padding-inline: var(--unit-s);
+}
+
+.hero:has(.container) {
+    padding-inline: 0;
 }
 
 /* SITE FOOTER */
@@ -330,7 +357,8 @@ section {
     padding-inline: var(--unit-s);
 }
 
-/* REMOVE FOOTER PADDING IF HAS A CONTAIENR */
+
+/* REMOVE FOOTER PADDING IF HAS A CONTAINER */
 .site-footer:has(.container) {
     padding-inline: 0;
 }
@@ -385,4 +413,38 @@ body {
 /* NUDGE THE NAV ITEMS DOWN TO ALIGN WITH LOGO TEXT */
 .site-header .site-nav ul {
     padding-block-start: calc(var(--unit-xs) + .35em;)
+}
+
+/* CUSTOM HERO STYLING */
+
+.hero h1 {
+    font-size: 4em;
+    margin-block: 0;
+}
+
+.hero p {
+    max-inline-size: 50ch;
+    text-wrap: balance;
+}
+
+/* CUSTOM PAGE LAYOUT - 2 COLUMNS: ASIDE + MAIN CONTENT */
+@media ( width>= 768px ) {
+.pagelayout-wrapper-twocolumn {
+    display: flex;
+    gap: var(--unit-l);
+}
+
+.pagesection-aside {
+    width: 25%;
+}
+
+.pagesection-maincontent {
+    width: 75%;
+}
+}
+
+/* STICKY BOX */
+.stickybox {
+    position: sticky;
+    top: var(--unit-s);
 }
