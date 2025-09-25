@@ -26,6 +26,7 @@ TABLE OF CONTENTS
     # GRID SYSTEM (12 COLUMNS)
 
 # UI COMPONENTS
+    # BUTTONS
     # CARDS
     # HR (HORIZONTAL RULES)
     # CODE BLOCKS
@@ -34,6 +35,9 @@ TABLE OF CONTENTS
 
 # CUSTOM SITE STYLING (OPINIONATED)
     # BODY GRID LAYOUT SYSTEM (header, main, footer)
+    # CUSTOM HERO STYLING
+    # CUSTOM PAGE LAYOUT - 2 COLUMNS: ASIDE + MAIN CONTENT
+    # STICKY BOX
 
 -------------------------*/
 
@@ -58,7 +62,10 @@ TABLE OF CONTENTS
     --color-blue-900: #1e40af;
 
     --color-green-100: #d1fae5;
+    --color-green-200: #b1e5ca;
     --color-green-400: #22c55e;
+    --color-green-600: #1AA44D;
+    --color-green-800: #1B7E41;
     --color-green-400: #166534;
 
     /* DEFINE SEMANTIC COLORS */
@@ -70,6 +77,9 @@ TABLE OF CONTENTS
     --color-primary-dark: var(--color-blue-900);
     --color-secondary: var(--color-green-400);
 
+    --color-links: var(--color-green-600);
+    --color-links-hover: var(--color-green-800);
+    --color-links-light: var(--color-green-200);
 
     --color-hero-background: var(--color-blue-100);
     --color-siteheader-background: transparent;
@@ -77,18 +87,18 @@ TABLE OF CONTENTS
 
     /* BORDER */
     --color-border: var(--color-grey-200);
-    --border-radius: 5px;
+    --border-radius: 10px;
     --border-thickness: 0.5px;
 
     /* SIZING UNITS */
-    --unit-2xs: 0.25em;
-    --unit-xs: 0.5em;
-    --unit-s: 1em;
-    --unit-m: 1.5em;
-    --unit-l: 2em;
-    --unit-xl: 3em;
-    --unit-2xl: 4em;
-    --unit-3xl: 6em;
+    --unit-2xs: 0.25rem;
+    --unit-xs: 0.5rem;
+    --unit-s: 1rem;
+    --unit-m: 1.5rem;
+    --unit-l: 2rem;
+    --unit-xl: 3rem;
+    --unit-2xl: 4rem;
+    --unit-3xl: 6rem;
 
     --container-width: 1100px;
 
@@ -171,14 +181,14 @@ html {
 
 /* LINKS */
 a {
-    color: var(--color-primary);
-    text-decoration-color: var(--color-primary-dark);
+    color: var(--color-links);
+    text-decoration-color: var(--color-black);
     text-underline-offset: .1em;
     text-decoration-thickness: 0.75px;
 }
 
 a:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-links-hover);
 }
 
 
@@ -368,6 +378,23 @@ section {
         UI COMPONENTS 
 ---------------------------- */
 
+/* BUTTONS */
+.button {
+    background: var(--color-links);
+    color: var(--color-white);
+    padding: var(--unit-s);
+    margin-block: var(--unit-2xs);
+    display: inline-block;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    line-height: 1;
+}
+
+.button:hover {
+    background-color: var(--color-links-hover);
+    color: var(--color-white);
+}
+
 /* CARDS */
 .cards {
     border: var(--border-thickness) solid var(--color-border);
@@ -410,6 +437,11 @@ body {
     min-height: 100svh;
 }
 
+/* TO FIX OVERFLOW WORD BREAK */
+body > * {
+    min-width: 0;
+}
+
 /* NUDGE THE NAV ITEMS DOWN TO ALIGN WITH LOGO TEXT */
 .site-header .site-nav ul {
     padding-block-start: calc(var(--unit-xs) + .35em;)
@@ -419,7 +451,9 @@ body {
 
 .hero h1 {
     font-size: 4em;
+    font: clamp(2.5em, 4vw, 4em);
     margin-block: 0;
+    overflow-wrap: break-word;
 }
 
 .hero p {
@@ -428,6 +462,11 @@ body {
 }
 
 /* CUSTOM PAGE LAYOUT - 2 COLUMNS: ASIDE + MAIN CONTENT */
+
+.pagelayout-wrapper-twocolumn {
+    padding-inline: var(--unit-2xs);
+}
+
 @media ( width>= 768px ) {
 .pagelayout-wrapper-twocolumn {
     display: flex;
