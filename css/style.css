@@ -314,7 +314,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* SITE NAV */
     /* DISPLAY LOGO ON FLEX AND NAV ON RIGHT */
     .site-header {
         display: flex;
@@ -324,7 +323,8 @@ a:hover {
         flex-wrap: wrap;
 }
 
-.site-header .site-nav ul {
+/* SITE NAV */
+.site-nav ul {
     display: flex;
     margin: 0;
     padding: 0;
@@ -333,12 +333,66 @@ a:hover {
     flex-wrap: wrap;
 }
 
-.site-header .site-nav a {
+.site-nav a {
     text-decoration: none;
     font-weight: bold;
     display: block;
     padding: var(--unit-s);
     padding-block-start: calc(var(--unit-xs) + .1em);
+}
+
+/* SHOW MENU BUTTON ON HIGHER LAYER WHEN NAV IS OPEN */
+.site-nav .menubutton {
+    position: relative;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: var(--unit-xs);
+}
+
+/* SMALL SCREENS: SHOW MENU, HIDE NAV */
+.site-nav .menubutton { display: block; }
+.site-nav ul { display: none; }
+
+/* BIG SCREENS: HIDE MENU BUTTON, SHOW NAV */
+@media ( width >= 768px ) {
+    .site-nav .menubutton { display: none; }
+    .site-nav ul { display: flex; }
+}
+
+/* SMALL SCREENS ONLY: ENABLE OVERLAY */
+@media ( width < 768px ) {
+    .site-nav[data-menustate] ul {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-blue-900);
+        transition: translate 0.4s ease-out;
+    }
+
+    .site-nav[data-menustate] a {
+        color: var(--color-white);
+    }
+
+
+    .site-nav[data-menustate="open"] ul {
+        translate: 0 0;
+    }
+
+    .site-nav[data-menustate="closed"] ul {
+        translate: 0 -100%;
+    }
+
+    .site-nav[data-menustate="open"] .simple-navicon rect {
+        fill: var(--color-white);
+    }
 }
 
 /* SITE MAIN */
@@ -366,7 +420,6 @@ section {
     padding-block: var(--unit-2xl);
     padding-inline: var(--unit-s);
 }
-
 
 /* REMOVE FOOTER PADDING IF HAS A CONTAINER */
 .site-footer:has(.container) {
