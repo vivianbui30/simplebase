@@ -54,6 +54,12 @@ TABLE OF CONTENTS
     --color-white: #ffffff;
     --color-black: #000000;
     --color-black-80: rgb(0,0,0,.8);
+    --color-black-70: rgb(0,0,0,.7);
+    --color-black-60: rgb(0,0,0,.6);
+    --color-black-50: rgb(0,0,0,.5);
+    --color-black-40: rgb(0,0,0,.4);
+    --color-black-30: rgb(0,0,0,.3);
+    --color-black-20: rgb(0,0,0,.2);
 
     --color-grey-200: rgb(0,0,0,.2);
 
@@ -77,13 +83,17 @@ TABLE OF CONTENTS
     --color-primary-dark: var(--color-blue-900);
     --color-secondary: var(--color-green-400);
 
-    --color-links: var(--color-green-600);
-    --color-links-hover: var(--color-green-800);
-    --color-links-light: var(--color-green-200);
+    /* ACTION COLORS */
+    --color-links: var(--color-black-40);
+    --color-links-hover: var(--color-black-80);
+    --color-links-light: var(--color-black-30);
 
-    --color-hero-background: var(--color-blue-100);
+    /* SECTION SPECIFIC */
+    --color-hero-background: var(--color-black-30);
     --color-siteheader-background: transparent;
     --color-sitefooter-background: transparent;
+    --color-siteheader-links: var(--color-blue-400);
+    --color-siteheader-links-hover: var(--color-blue-900);
 
     /* BORDER */
     --color-border: var(--color-grey-200);
@@ -339,6 +349,11 @@ a:hover {
     display: block;
     padding: var(--unit-s);
     padding-block-start: calc(var(--unit-xs) + .1em);
+    color: var(--color-siteheader-links);
+}
+
+.site-nav a:hover {
+    color: var(--color-siteheader-links-hover);
 }
 
 /* SHOW MENU BUTTON ON HIGHER LAYER WHEN NAV IS OPEN */
@@ -350,6 +365,7 @@ a:hover {
     font-size: inherit;
     font-family: inherit;
     padding: var(--unit-xs);
+    padding-block-start: (--var(--unit-xs));
 }
 
 /* SMALL SCREENS: SHOW MENU, HIDE NAV */
@@ -374,13 +390,11 @@ a:hover {
         width: 100%;
         height: 100%;
         background: var(--color-blue-900);
-        transition: translate 0.4s ease-out;
     }
 
     .site-nav[data-menustate] a {
         color: var(--color-white);
     }
-
 
     .site-nav[data-menustate="open"] ul {
         translate: 0 0;
@@ -390,8 +404,41 @@ a:hover {
         translate: 0 -100%;
     }
 
+    /* ENABLE SVG ANIMATION FOR THE NAVICON*/
+    .site-nav[data-menustate] .simple-navicon rect {
+        transition: all 0.2s ease-out;
+    }
+
+    /* CHANGE COLOR OF THE SVG NAVICON WHEN MENU IS OPEN */
     .site-nav[data-menustate="open"] .simple-navicon rect {
         fill: var(--color-white);
+    }
+
+    /* ANIMATE NAVICON LINES TO AN X WHEN OPEN */
+    .site-nav .simple-navicon {
+        display: block;
+    }
+    
+    .site-nav .simple-navicon rect {
+        transform-origin: center;
+        width: 100%
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-top {
+        position: fixed;
+        top: calc(var(--unit-s) + var(--unit-s));
+        right: calc(var(--unit-s) + var(--unit-xs));
+        
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-top {
+        rotate: 45deg;
+        translate: -21% 24%;
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-middle {
+        opacity: 0;
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-bottom {
+        rotate: -45deg;
+        translate: -21% -24%;
     }
 }
 
@@ -536,7 +583,9 @@ body > * {
 }
 
 /* STICKY BOX */
-.stickybox {
-    position: sticky;
-    top: var(--unit-s);
-}
+/* NOTE NEEDED ON SMALL SCREENS, SO IT IS SET INSIDE OF A MEDIA QUERY SO IT ALLOWS THE OVERLAY MENU TO RENDER ON TOP OF SMALL SCREENS */
+@media ( width >= 768px ) {
+    .stickybox {
+        position: sticky;
+        top: var(--unit-s);
+}}
