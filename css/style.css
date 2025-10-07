@@ -101,6 +101,7 @@ TABLE OF CONTENTS
     --border-thickness: 0.5px;
 
     /* SIZING UNITS */
+    --unit-3xs: 0.125rem;
     --unit-2xs: 0.25rem;
     --unit-xs: 0.5rem;
     --unit-s: 1rem;
@@ -470,6 +471,9 @@ section {
     padding-inline: var(--unit-s);
 }
 
+.site-footer li {
+    padding: var(--unit-3xs);
+}
 /* REMOVE FOOTER PADDING IF HAS A CONTAINER */
 .site-footer:has(.container) {
     padding-inline: 0;
