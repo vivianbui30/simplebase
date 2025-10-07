@@ -92,8 +92,8 @@ TABLE OF CONTENTS
     --color-hero-background: var(--color-black-30);
     --color-siteheader-background: transparent;
     --color-sitefooter-background: transparent;
-    --color-siteheader-links: var(--color-blue-400);
-    --color-siteheader-links-hover: var(--color-blue-900);
+    --color-siteheader-links: var(--color-black-60);
+    --color-siteheader-links-hover: var(--color-black-80);
 
     /* BORDER */
     --color-border: var(--color-grey-200);
@@ -389,7 +389,8 @@ a:hover {
         top: 0;
         width: 100%;
         height: 100%;
-        background: var(--color-blue-900);
+        background: var(--color-black);
+        transition: translate 0.4s ease-out;
     }
 
     .site-nav[data-menustate] a {
@@ -401,7 +402,7 @@ a:hover {
     }
 
     .site-nav[data-menustate="closed"] ul {
-        translate: 0 -100%;
+        translate: 100% 0;
     }
 
     /* ENABLE SVG ANIMATION FOR THE NAVICON*/
