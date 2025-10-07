@@ -84,8 +84,8 @@ TABLE OF CONTENTS
     --color-secondary: var(--color-green-400);
 
     /* ACTION COLORS */
-    --color-links: var(--color-black-40);
-    --color-links-hover: var(--color-black-80);
+    --color-links: var(--color-black-70);
+    --color-links-hover: var(--color-black);
     --color-links-light: var(--color-black-30);
 
     /* SECTION SPECIFIC */
