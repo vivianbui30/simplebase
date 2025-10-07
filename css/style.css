@@ -365,7 +365,7 @@ a:hover {
     font-size: inherit;
     font-family: inherit;
     padding: var(--unit-xs);
-    padding-block-start: (--var(--unit-xs));
+    padding-block-start: var(--unit-xs);
 }
 
 /* SMALL SCREENS: SHOW MENU, HIDE NAV */
@@ -545,7 +545,7 @@ body > * {
 
 /* NUDGE THE NAV ITEMS DOWN TO ALIGN WITH LOGO TEXT */
 .site-header .site-nav ul {
-    padding-block-start: calc(var(--unit-xs) + .35em;)
+    padding-block-start: calc(var(--unit-xs) + 0.35em);
 }
 
 /* CUSTOM HERO STYLING */
