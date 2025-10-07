@@ -406,12 +406,13 @@ a:hover {
     }
 
     /* ENABLE SVG ANIMATION FOR THE NAVICON*/
-    .site-nav[data-menustate] .simple-navicon rect {
+    .site-nav[data-menustate] svg.simple-navicon rect {
         transition: all 0.2s ease-out;
+        fill: var(--color-primary);
     }
 
     /* CHANGE COLOR OF THE SVG NAVICON WHEN MENU IS OPEN */
-    .site-nav[data-menustate="open"] .simple-navicon rect {
+    .site-nav[data-menustate="open"] svg.simple-navicon rect {
         fill: var(--color-white);
     }
 
